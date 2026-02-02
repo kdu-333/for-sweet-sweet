@@ -9,7 +9,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Continuous Marquee Banner */
+/* Marquee */
 #marqueeContainer {
     position: fixed;
     top: 0;
@@ -22,7 +22,6 @@ body {
 }
 
 #marqueeContent {
-    display: inline-block;
     white-space: nowrap;
     color: yellow;
     font-size: 48px;
@@ -51,8 +50,6 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
-    z-index: 0;
-    /* Confetti and roses will be behind card */
 }
 
 /* Card */
@@ -65,30 +62,32 @@ body {
     position: relative;
     box-shadow: 0 12px 30px rgba(255, 105, 135, 0.25);
     z-index: 10;
-    /* Card is above petals/confetti */
 }
 
-/* Hamster image */
+/* Images */
 .hamster {
     width: 120px;
     margin-bottom: 20px;
 }
 
-/* Question text */
+#danceGif {
+    width: 300px;
+    display: none;
+    margin-top: 10px;
+}
+
+/* Text */
 .question {
     font-size: 19px;
-    margin-bottom: 15px;
     color: #7a2d45;
 }
 
-/* Celebration text */
 #celebrationText {
     display: none;
     font-size: 24px;
     font-weight: bold;
     color: #ff5d8f;
     animation: bounce 1s infinite;
-    margin: 10px 0 5px 0;
 }
 
 @keyframes bounce {
@@ -103,14 +102,7 @@ body {
     }
 }
 
-/* GIF */
-#danceGif {
-    width: 300px;
-    display: none;
-    margin-top: 10px;
-}
-
-/* Buttons container */
+/* Buttons */
 .buttons {
     position: relative;
     width: 100%;
@@ -118,7 +110,6 @@ body {
     margin-top: 10px;
 }
 
-/* Base button style */
 button {
     border: none;
     border-radius: 30px;
@@ -126,7 +117,6 @@ button {
     font-weight: bold;
 }
 
-/* YES button */
 #yesBtn {
     position: absolute;
     left: 10%;
@@ -136,15 +126,12 @@ button {
     background-color: #ff5d8f;
     color: white;
     box-shadow: 0 6px 15px rgba(255, 93, 143, 0.4);
-    transform: scale(1);
     transition: transform 0.2s;
     z-index: 10;
 }
 
-/* NO button */
 #noBtn {
     position: absolute;
-    right: 10%;
     bottom: 0;
     width: 70px;
     height: 36px;
@@ -158,6 +145,19 @@ button {
     z-index: 10;
 }
 
+/* Petal hint */
+#petalHint {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    font-size: 13px;
+    color: #7a2d45;
+    opacity: 0.8;
+    font-style: italic;
+    z-index: 999;
+    user-select: none;
+}
+
 /* Rose petals */
 .rose {
     position: absolute;
@@ -166,8 +166,8 @@ button {
     height: 35px;
     background-image: url("rose.png");
     background-size: cover;
-    pointer-events: none;
     animation: fall linear forwards;
+    cursor: pointer;
     z-index: 1;
 }
 
@@ -179,7 +179,6 @@ button {
     height: 35px;
     background-image: url("confetti.png");
     background-size: cover;
-    pointer-events: none;
     animation: fall linear forwards;
     z-index: 2;
 }
