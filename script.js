@@ -93,9 +93,9 @@ setInterval(createRose, 300);
 
 /* YES button click */
 yesBtn.addEventListener("click", () => {
-    alert("SEE YOU AT MT. MEGATONG, I'LL BE YOUR PERSONAL PORTER! ^__^");
+    alert("TARA NA SA MT. MEGATONG!! ME NA IMONG PERSONAL PORTER!^__^");
 
-    // Hide buttons and show celebration
+    // hide buttons and show celebration
     yesBtn.style.display = "none";
     noBtn.style.display = "none";
     document.querySelector(".buttons").style.display = "none";
@@ -103,11 +103,12 @@ yesBtn.addEventListener("click", () => {
     celebrationText.style.display = "block";
     marqueeContainer.style.display = "block";
 
-    // Stop background music and play YES music
+    // stop background music and play YES music
     bgMusic.pause();
     bgMusic.currentTime = 0;
     yesMusic.play().catch(() => { });
 
-    // Start confetti after YES click
+    // start confetti after YES click
     setInterval(createConfetti, 200);
 });
+
