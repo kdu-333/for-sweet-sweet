@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Continuous Marquee Banner */
+#marqueeContainer {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+    display: none;
+    z-index: 1000;
+    height: 60px;
+}
+
+#marqueeContent {
+    display: inline-block;
+    white-space: nowrap;
+    color: yellow;
+    font-size: 48px;
+    font-weight: bold;
+    padding-left: 100%;
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Background */
+.background {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom, #ffe4ec, #ffd6e0, #fff0f5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    /* Confetti and roses will be behind card */
+}
+
+/* Card */
+.card {
+    background-color: #fff7fa;
+    padding: 45px 55px;
+    border-radius: 32px;
+    text-align: center;
+    width: 450px;
+    position: relative;
+    box-shadow: 0 12px 30px rgba(255, 105, 135, 0.25);
+    z-index: 10;
+    /* Card is above petals/confetti */
+}
+
+/* Hamster image */
+.hamster {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+/* Question text */
+.question {
+    font-size: 19px;
+    margin-bottom: 15px;
+    color: #7a2d45;
+}
+
+/* Celebration text */
+#celebrationText {
+    display: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff5d8f;
+    animation: bounce 1s infinite;
+    margin: 10px 0 5px 0;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* GIF */
+#danceGif {
+    width: 300px;
+    display: none;
+    margin-top: 10px;
+}
+
+/* Buttons container */
+.buttons {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+}
+
+/* Base button style */
+button {
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* YES button */
+#yesBtn {
+    position: absolute;
+    left: 10%;
+    bottom: 0;
+    padding: 14px 38px;
+    font-size: 18px;
+    background-color: #ff5d8f;
+    color: white;
+    box-shadow: 0 6px 15px rgba(255, 93, 143, 0.4);
+    transform: scale(1);
+    transition: transform 0.2s;
+    z-index: 10;
+}
+
+/* NO button */
+#noBtn {
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+    width: 70px;
+    height: 36px;
+    font-size: 13px;
+    background-color: #ffffff;
+    color: #7a2d45;
+    border: 2px solid #ffb3c6;
+    border-radius: 18px;
+    box-shadow: 0 4px 10px rgba(255, 179, 198, 0.35);
+    transition: left 0.15s ease, top 0.15s ease;
+    z-index: 10;
+}
+
+/* Rose petals */
+.rose {
+    position: absolute;
+    top: -50px;
+    width: 35px;
+    height: 35px;
+    background-image: url("rose.png");
+    background-size: cover;
+    pointer-events: none;
+    animation: fall linear forwards;
+    z-index: 1;
+}
+
+/* Confetti */
+.confetti {
+    position: absolute;
+    top: -50px;
+    width: 35px;
+    height: 35px;
+    background-image: url("confetti.png");
+    background-size: cover;
+    pointer-events: none;
+    animation: fall linear forwards;
+    z-index: 2;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
