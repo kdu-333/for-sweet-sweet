@@ -112,7 +112,7 @@ setInterval(createRose, 300);
 
 /* ALERT MESSSAGE BAI*/
 yesBtn.addEventListener("click", () => {
-    alert("TARA NA SA MT. MEGATONG!! ME NA IMONG PERSONAL PORTER HA!^__^");
+    alert("TARA NA SA MATIGOL!! AKO IMONG PERSONAL PORTER HA!^__^");
 
     petalHint.style.display = "none";
 
@@ -130,3 +130,4 @@ yesBtn.addEventListener("click", () => {
 
     setInterval(createConfetti, 200);
 });
+
